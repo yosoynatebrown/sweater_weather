@@ -35,7 +35,6 @@ class Forecast
         conditions: day[:weather][0][:description],
         icon: day[:weather][0][:icon]
       }
-      require 'pry'; binding.pry
     end
   end
 
@@ -48,6 +47,5 @@ class Forecast
         icon: hour[:weather][0][:icon]
       }
     end
-    require 'pry'; binding.pry
   end
 end
