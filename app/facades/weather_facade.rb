@@ -1,7 +1,7 @@
 class WeatherFacade
-  def self.forecast(lat, lng)
-    response = WeatherService.forecast(lat, lng)
-    
+  def self.forecast(coordinates)
+    response = WeatherService.forecast(coordinates.latitude, coordinates.longitude)
+
     time_scales = {
       current_weather: response[:current],
       hourly_weather:  response[:hourly],
