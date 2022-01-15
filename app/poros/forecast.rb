@@ -4,12 +4,12 @@ class Forecast
               :hourly_weather
 
   def initialize(time_scales)
-    @current_weather = current_weather(time_scales[:current_weather])
-    @hourly_weather = hourly_weather(time_scales[:hourly_weather])
-    @daily_weather = daily_weather(time_scales[:daily_weather])
+    @current_weather = current(time_scales[:current_weather])
+    @hourly_weather  = hourly(time_scales[:hourly_weather])
+    @daily_weather   = daily(time_scales[:daily_weather])
   end
 
-  def current_weather(data)
+  def current(data)
     {
       datetime: Time.at(data[:dt]),
       sunrise: Time.at(data[:sunrise]),
@@ -24,10 +24,10 @@ class Forecast
     }
   end
 
-  def daily_weather(data)
-    wip = data.map do |day|
+  def daily(data)
+    data.map do |day|
       {
-        date: Time.at(day[:dt]).to_date,
+        date: Time.at(day[:dt]).strftime("%F"),
         sunrise: Time.at(day[:sunrise]),
         sunset: Time.at(day[:sunset]),
         max_temp: day[:temp][:max].to_f,
@@ -38,8 +38,8 @@ class Forecast
     end
   end
 
-  def hourly_weather(data)
-    wip = data.map do |hour|
+  def hourly(data)
+    data.map do |hour|
       {
         time: Time.at(hour[:dt]).strftime("%T")  ,
         temperature: hour[:temp].to_f,
