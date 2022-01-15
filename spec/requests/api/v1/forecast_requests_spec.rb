@@ -52,7 +52,7 @@ describe 'Forecasts API' do
     expect(forecast[:data][:attributes][:current_weather]).not_to have_key(:dew_point)
 
     expect(forecast[:data][:attributes][:hourly_weather].length).to eq(8)
-    
+
     forecast[:data][:attributes][:hourly_weather].each do |hour|
       expect(hour).to have_key(:time)
       expect(hour[:time]).to be_a(String)
@@ -65,6 +65,11 @@ describe 'Forecasts API' do
 
       expect(hour).to have_key(:icon)
       expect(hour[:icon]).to be_a(String)
+
+      expect(hour).not_to have_key(:wind_speed)
+      expect(hour).not_to have_key(:wind_deg)
+      expect(hour).not_to have_key(:wind_gust)
+      expect(hour).not_to have_key(:dew_point)
     end
 
     forecast[:data][:attributes][:daily_weather].each do |day|
@@ -88,6 +93,11 @@ describe 'Forecasts API' do
 
       expect(day).to have_key(:icon)
       expect(day[:icon]).to be_a(String)
+      
+      expect(day).not_to have_key(:wind_speed)
+      expect(day).not_to have_key(:wind_deg)
+      expect(day).not_to have_key(:wind_gust)
+      expect(day).not_to have_key(:dew_point)
     end
   end
 end
