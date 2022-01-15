@@ -4,7 +4,7 @@ class WeatherFacade
 
     time_scales = {
       current_weather: response[:current],
-      hourly_weather:  response[:hourly],
+      hourly_weather:  response[:hourly][0..7],
       daily_weather:   response[:daily]
     }
 

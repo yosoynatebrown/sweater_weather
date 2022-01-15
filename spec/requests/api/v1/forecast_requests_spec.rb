@@ -7,7 +7,7 @@ describe 'Forecasts API' do
     expect(response).to be_successful
     
     forecast = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(forecast).to have_key(:data)
     expect(forecast[:data][:type]).to eq("forecast")
     expect(forecast[:data]).to have_key(:attributes)
@@ -51,6 +51,8 @@ describe 'Forecasts API' do
     expect(forecast[:data][:attributes][:current_weather]).not_to have_key(:wind_gust)
     expect(forecast[:data][:attributes][:current_weather]).not_to have_key(:dew_point)
 
+    expect(forecast[:data][:attributes][:hourly_weather].length).to eq(8)
+    
     forecast[:data][:attributes][:hourly_weather].each do |hour|
       expect(hour).to have_key(:time)
       expect(hour[:time]).to be_a(String)
