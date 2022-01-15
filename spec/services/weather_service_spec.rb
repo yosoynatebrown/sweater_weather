@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Weather search' do
   it 'can find the current weather of a city' do
-    response = WeatherService.weather(39.738453, -104.984853)
+    response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash
 
@@ -42,7 +42,7 @@ RSpec.describe 'Weather search' do
   end
 
   it 'can find the daily weather of a city' do
-    response = WeatherService.weather(39.738453, -104.984853)
+    response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash
 
@@ -77,7 +77,7 @@ RSpec.describe 'Weather search' do
   end
 
   it 'can find the hourly weather of a city' do
-    response = WeatherService.weather(39.738453, -104.984853)
+    response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash
 
