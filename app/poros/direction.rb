@@ -1,7 +1,7 @@
 class Direction
-  attr_reader :time
+  attr_reader :travel_time
   
   def initialize(data)
-    @time = data[:formattedTime]
+    @travel_time = data[:formattedTime]
   end
 end
