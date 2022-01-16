@@ -1,4 +1,4 @@
-git require 'rails_helper'
+require 'rails_helper'
 
 describe 'Forecasts API' do
   it 'sends a forecast', :vcr do
