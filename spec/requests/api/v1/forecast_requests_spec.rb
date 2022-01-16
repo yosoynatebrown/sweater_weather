@@ -1,11 +1,11 @@
-require 'rails_helper'
+git require 'rails_helper'
 
 describe 'Forecasts API' do
   it 'sends a forecast', :vcr do
     get '/api/v1/forecast?location=denver,co'
     
-    expect(response).to be_successful
-    
+    expect(response.status).to eq(200)
+
     forecast = JSON.parse(response.body, symbolize_names: true)
 
     expect(forecast).to have_key(:data)
