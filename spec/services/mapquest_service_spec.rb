@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Coordinate search' do
-  it 'can find the coordinate of a city' do
+  it 'can find the coordinate of a city', :vcr do
     response = MapquestService.coordinates("Denver,CO")
 
     expect(response).to be_a Hash

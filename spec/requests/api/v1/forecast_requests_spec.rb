@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Forecasts API' do
-  it 'sends a forecast' do
+  it 'sends a forecast', :vcr do
     get '/api/v1/forecast?location=denver,co'
     
     expect(response).to be_successful
@@ -35,7 +35,7 @@ describe 'Forecasts API' do
     expect(forecast[:data][:attributes][:current_weather][:humidity]).to be_a(Float).or be_an Integer
 
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:uvi)
-    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_a Float
+    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_a(Float).or be_an Integer
 
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:visibility)
     expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a Integer

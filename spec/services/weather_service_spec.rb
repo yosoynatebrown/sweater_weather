@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Weather search' do
-  it 'can find the current weather of a city' do
+  it 'can find the current weather of a city', :vcr do
     response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash
@@ -29,7 +29,7 @@ RSpec.describe 'Weather search' do
     expect(current_data[:humidity]).to be_a Integer
 
     expect(current_data).to have_key :uvi
-    expect(current_data[:uvi]).to be_a Float
+    expect(current_data[:uvi]).to be_a(Float).or be_an Integer
 
     expect(current_data).to have_key :visibility
     expect(current_data[:visibility]).to be_a Integer
@@ -41,7 +41,7 @@ RSpec.describe 'Weather search' do
     expect(current_data[:weather][0][:icon]).to be_a String
   end
 
-  it 'can find the daily weather of a city' do
+  it 'can find the daily weather of a city', :vcr do
     response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash
@@ -76,7 +76,7 @@ RSpec.describe 'Weather search' do
     expect(first_day_data[:weather][0][:icon]).to be_a String
   end
 
-  it 'can find the hourly weather of a city' do
+  it 'can find the hourly weather of a city', :vcr do
     response = WeatherService.forecast(39.738453, -104.984853)
 
     expect(response).to be_a Hash

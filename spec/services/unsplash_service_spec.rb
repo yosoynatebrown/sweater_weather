@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Image search' do
-  it 'can find the image of a city' do
+  it 'can find the image of a city', :vcr do
     response = UnsplashService.images("Denver,CO")
 
     expect(response).to be_a Hash
