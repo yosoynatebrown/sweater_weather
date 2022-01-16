@@ -75,6 +75,13 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
 end
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 def coordinate_data
   {:lat=>39.738453, :lng=>-104.984853}
 end
