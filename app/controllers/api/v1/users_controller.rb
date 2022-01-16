@@ -1,9 +1,8 @@
 class Api::V1::UsersController < ApplicationController
   include ExceptionHandler
   def create
-    user = user_params
-    new_user = User.create!(user)
-
+    new_user = User.create!(user_params)
+    
     render json: UsersSerializer.new(new_user), status: 201
   end
 

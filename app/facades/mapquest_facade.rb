@@ -6,4 +6,10 @@ class MapquestFacade
 
     Coordinate.new(coordinates)
   end
+
+  def self.directions(from, to)
+    directions = MapquestService.directions(from, to)[:route]
+
+    Direction.new(directions)
+  end
 end
