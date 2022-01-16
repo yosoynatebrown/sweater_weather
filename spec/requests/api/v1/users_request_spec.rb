@@ -7,20 +7,20 @@ describe 'Users API' do
       "password": "password",
       "password_confirmation": "password"
     }
-  }
+               }
   let(:headers) {
     {
       "Content-Type" => "application/json",
       "Accept"  => "application/json"
     }
-  }
+               }
     let(:invalid_params) {
     {
       "email": "whatever@example.com",
       "password": "password",
       "password_confirmation": "password_no_match"
     }
-  }
+                         }
 
   context 'when passwords match' do
     it 'will create a user' do
