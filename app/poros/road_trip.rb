@@ -13,24 +13,24 @@ class RoadTrip
     @weather_at_eta = weather_data
   end
 
-  def weather_data
-    coordinates = MapquestFacade.coordinates(@end_city)
-    forecast = WeatherFacade.forecast(coordinates)
+private
+      def weather_data
+        coordinates = MapquestFacade.coordinates(@end_city)
+        forecast = WeatherFacade.forecast(coordinates)
 
-    travel_time_in_seconds = to_seconds(travel_time)
+        travel_time_in_seconds = to_seconds(travel_time)
 
-    if travel_time_in_seconds < 8.hours
-      weather = hourly_weather(forecast, travel_time_in_seconds)
-    else
-      weather = daily_weather(forecast, travel_time_in_seconds)
-    end
-    arrival_weather = {}
-    arrival_weather[:temperature] = weather[:temperature]
-    arrival_weather[:conditions]  = weather[:conditions]
-    arrival_weather
-  end
+        if travel_time_in_seconds < 8.hours
+          weather = hourly_weather(forecast, travel_time_in_seconds)
+        else
+          weather = daily_weather(forecast, travel_time_in_seconds)
+        end
+        arrival_weather = {}
+        arrival_weather[:temperature] = weather[:temperature]
+        arrival_weather[:conditions]  = weather[:conditions]
+        arrival_weather
+      end
 
-  private
       def hourly_weather(forecast, travel_time_in_seconds)
         arrival_time = Time.now + travel_time_in_seconds
 

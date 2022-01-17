@@ -53,8 +53,12 @@ describe 'Users API' do
       
       errors = JSON.parse(response.body, symbolize_names: true)
 
+      
+      expect(errors).to have_key(:message)
+      expect(errors[:message]).to eq("Incorrect credentials")
+
       expect(errors).to have_key(:errors)
-      expect(errors[:errors]).to eq("Validation failed: Email has already been taken, Password confirmation doesn't match Password")
+      expect(errors[:errors]).to eq(["Your login or API key is invalid. Cannot authenticate."])
     end
   end
 end

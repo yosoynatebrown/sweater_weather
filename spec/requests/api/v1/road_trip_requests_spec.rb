@@ -78,8 +78,11 @@ describe 'RoadTrip API' do
       
       road_trip = JSON.parse(response.body, symbolize_names: true)
 
-      expect(road_trip).to have_key(:error)
-      expect(road_trip[:error]).to eq("Unauthorized API key")
+      expect(road_trip).to have_key(:message)
+      expect(road_trip[:message]).to eq("Incorrect credentials")
+
+      expect(road_trip).to have_key(:errors)
+      expect(road_trip[:errors]).to eq(["Your login or API key is invalid. Cannot authenticate."])
   end
 
   it 'returns error json if api key is absent', :vcr do
@@ -94,7 +97,10 @@ describe 'RoadTrip API' do
       
       road_trip = JSON.parse(response.body, symbolize_names: true)
 
-      expect(road_trip).to have_key(:error)
-      expect(road_trip[:error]).to eq("Unauthorized API key")
+      expect(road_trip).to have_key(:message)
+      expect(road_trip[:message]).to eq("Incorrect credentials")
+
+      expect(road_trip).to have_key(:errors)
+      expect(road_trip[:errors]).to eq(["Your login or API key is invalid. Cannot authenticate."])
   end
 end
