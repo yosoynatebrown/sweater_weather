@@ -2,7 +2,7 @@ module ExceptionHandler
   extend ActiveSupport::Concern
 def invalid_credentials
     {
-      message: "Incorrect credentials",
+      message: "Invalid credentials",
       errors: [
         "Your login or API key is invalid. Cannot authenticate."
               ]

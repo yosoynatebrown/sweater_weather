@@ -15,6 +15,10 @@ class RoadTrip
 
 private
       def weather_data
+      if @travel_time.nil?
+        @travel_time = "impossible"
+        return {}
+      else
         coordinates = MapquestFacade.coordinates(@end_city)
         forecast = WeatherFacade.forecast(coordinates)
 
@@ -29,6 +33,7 @@ private
         arrival_weather[:temperature] = weather[:temperature]
         arrival_weather[:conditions]  = weather[:conditions]
         arrival_weather
+      end
       end
 
       def hourly_weather(forecast, travel_time_in_seconds)
