@@ -55,7 +55,7 @@ describe 'Users API' do
 
       
       expect(errors).to have_key(:message)
-      expect(errors[:message]).to eq("Incorrect credentials")
+      expect(errors[:message]).to eq("Invalid credentials")
 
       expect(errors).to have_key(:errors)
       expect(errors[:errors]).to eq(["Your login or API key is invalid. Cannot authenticate."])

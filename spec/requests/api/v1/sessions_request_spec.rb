@@ -46,7 +46,7 @@ describe 'Sessions API' do
       
       login = JSON.parse(response.body, symbolize_names: true)
 
-      expect(login[:message]).to eq("Incorrect credentials")
+      expect(login[:message]).to eq("Invalid credentials")
       expect(login[:errors][0]).to eq("Your login or API key is invalid. Cannot authenticate.")
     end
   end
@@ -64,7 +64,7 @@ describe 'Sessions API' do
       
       login = JSON.parse(response.body, symbolize_names: true)
       
-      expect(login[:message]).to eq("Incorrect credentials")
+      expect(login[:message]).to eq("Invalid credentials")
       expect(login[:errors][0]).to eq("Your login or API key is invalid. Cannot authenticate.")
     end
   end
