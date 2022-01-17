@@ -6,4 +6,9 @@ RSpec.describe 'Mapquest Facade' do
     
     expect(coordinate).to be_a Coordinate
   end
+  it '.directions', :vcr do
+    directions = MapquestFacade.directions("Denver, CO", "Los Angeles, CA")
+    
+    expect(directions).to be_a Direction
+  end
 end

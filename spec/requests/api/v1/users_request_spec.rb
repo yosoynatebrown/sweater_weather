@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Users API' do
   let(:params) {
     {
-      "email": "whatever@example.com",
+      "email": "whatever123@example.com",
       "password": "password",
       "password_confirmation": "password"
     }
@@ -16,7 +16,7 @@ describe 'Users API' do
                }
     let(:invalid_params) {
     {
-      "email": "whatever@example.com",
+      "email": "whatever123@example.com",
       "password": "password",
       "password_confirmation": "password_no_match"
     }
