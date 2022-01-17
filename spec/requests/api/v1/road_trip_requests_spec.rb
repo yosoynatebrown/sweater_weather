@@ -65,4 +65,36 @@ describe 'RoadTrip API' do
     expect(road_trip[:data][:attributes]).to have_key(:weather_at_eta)
     expect(road_trip[:data][:attributes][:weather_at_eta]).to be_a Hash
   end
+
+  it 'returns error json if api key is invalid', :vcr do
+    params = {
+      "origin": "Denver,CO",
+      "destination": "Pueblo,CO",
+      "api_key": "blahblahfakeapikeyhere"
+      }
+      post "/api/v1/road_trip", headers: headers, params: params.to_json
+
+      expect(response.status).to eq(401)
+      
+      road_trip = JSON.parse(response.body, symbolize_names: true)
+
+      expect(road_trip).to have_key(:error)
+      expect(road_trip[:error]).to eq("Unauthorized API key")
+  end
+
+  it 'returns error json if api key is absent', :vcr do
+    params = {
+      "origin": "Denver,CO",
+      "destination": "Pueblo,CO",
+      "api_key": nil
+      }
+      post "/api/v1/road_trip", headers: headers, params: params.to_json
+
+      expect(response.status).to eq(401)
+      
+      road_trip = JSON.parse(response.body, symbolize_names: true)
+
+      expect(road_trip).to have_key(:error)
+      expect(road_trip[:error]).to eq("Unauthorized API key")
+  end
 end
