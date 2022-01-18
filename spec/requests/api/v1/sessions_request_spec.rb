@@ -53,7 +53,7 @@ describe 'Sessions API' do
 
   context 'when email is invalid' do
     it 'will return the same error' do
-      user = create(:user)
+      create(:user)
       params = {
         "email": 'wrong_email@madeup123.com',
         "password": 'password123'
