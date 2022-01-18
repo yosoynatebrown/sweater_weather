@@ -2,55 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://open.mapquestapi.com/directions/v2/route?from=New%20York,%20NY&key=<mapquest_key>&to=London,%20UK
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.0.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Date:
-      - Mon, 17 Jan 2022 17:47:45 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Content-Length:
-      - '278'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - JSESSIONID=2DC647C99D8894C29B7701E5C53A800F; Path=/directions; HttpOnly
-      Expires:
-      - Mon, 20 Dec 1998 01:00:00 GMT
-      Last-Modified:
-      - Mon, 17 Jan 2022 17:47:45 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Pragma:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - OPTIONS,GET,POST
-      Status:
-      - success
-      Transactionweight:
-      - '1'
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Mon, 17 Jan 2022 17:47:45 GMT
-- request:
-    method: get
     uri: http://www.mapquestapi.com/geocoding/v1/address?key=<mapquest_key>&location=London,%20UK
     body:
       encoding: US-ASCII
@@ -209,4 +160,53 @@ http_interactions:
         in many areas on Tuesday, though a few spots may stay foggy into the afternoon.
         For further details see https://www.metoffice.gov.uk/weather/warnings-and-advice/uk-warnings","tags":["Fog"]}]}'
   recorded_at: Mon, 17 Jan 2022 17:47:46 GMT
+- request:
+    method: get
+    uri: https://open.mapquestapi.com/directions/v2/route?from=New%20York,%20NY&key=<mapquest_key>&to=London,%20UK
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 17 Jan 2022 22:09:12 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '278'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=B5FA5499A5D34ED72E2C5BE149ACD398; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Mon, 17 Jan 2022 22:09:12 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
+  recorded_at: Mon, 17 Jan 2022 22:09:12 GMT
 recorded_with: VCR 6.0.0

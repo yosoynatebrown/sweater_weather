@@ -12,8 +12,8 @@ class MapquestService
     response = conn.get("/directions/v2/route?key=#{ENV['mapquest_key']}&from=#{from}&to=#{to}")
     JSON.parse(response.body, symbolize_names: true)
   end
-
-  def self.get_url(url)
-    Faraday.new(url)
-  end
+  private
+    def self.get_url(url)
+      Faraday.new(url)
+    end
 end
