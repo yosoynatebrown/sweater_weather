@@ -164,7 +164,7 @@ body:
 }
 ```
 ### Road Trip
-
+This endpoint helps logged in users plan a road trip by giving them a travel time estimate and weather at the time and location of their arrival.
 #### Request:
 ```
 POST /api/v1/road_trip\
