@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Forecast
   attr_reader :id,
               :current_weather,

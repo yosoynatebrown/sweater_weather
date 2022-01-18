@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WeatherFacade
   def self.forecast(coordinates)
     response = WeatherService.forecast(coordinates.latitude, coordinates.longitude)

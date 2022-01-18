@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadTripFacade
   def self.road_trip(start_city, end_city)
     directions = MapquestFacade.directions(start_city, end_city)

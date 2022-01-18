@@ -1,14 +1,20 @@
-class Api::V1::UsersController < ApplicationController
-  include ExceptionHandler
-  def create
-    new_user = User.create!(user_params)
+# frozen_string_literal: true
 
-    render json: UsersSerializer.new(new_user), status: 201
-  end
+module Api
+  module V1
+    class UsersController < ApplicationController
+      include ExceptionHandler
+      def create
+        new_user = User.create!(user_params)
 
-  private
+        render json: UsersSerializer.new(new_user), status: 201
+      end
 
-  def user_params
-    params.permit(:email, :password, :password_confirmation)
+      private
+
+      def user_params
+        params.permit(:email, :password, :password_confirmation)
+      end
+    end
   end
 end

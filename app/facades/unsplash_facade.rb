@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UnsplashFacade
   def self.image(search)
     response = UnsplashService.images(search)

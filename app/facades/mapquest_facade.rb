@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MapquestFacade
   def self.coordinates(city)
     response = MapquestService.coordinates(city)
