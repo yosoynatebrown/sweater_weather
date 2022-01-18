@@ -1,6 +1,10 @@
 class Api::V1::BookSearchController < ApplicationController
   def index
-    if params[:quantity].to_i > 0
+    if params[:quantity].nil?
+      books = LibraryFacade.book_search(params[:location])
+
+      render json: BooksSerializer.new(books)
+    elsif params[:quantity].to_i > 0
       books = LibraryFacade.book_search(params[:location], params[:quantity])
 
       render json: BooksSerializer.new(books)
