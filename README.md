@@ -16,12 +16,12 @@ Then run:\
 `rails db:{create,migrate}`\
 `bundle install`\
 and\
-`bundle exec figaro install`\
+`bundle exec figaro install`
 to create an application.yml file in your config directory (where you will you store the necessary API keys).
 
 Register for a MapQuest API key [here.](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)\
 Register for a Unsplash API key [here.](https://unsplash.com/developers)\
-Register for a OpenWeather API key [here.](https://home.openweathermap.org/users/sign_up)\
+Register for a OpenWeather API key [here.](https://home.openweathermap.org/users/sign_up)
 
 Place those keys in your application.yml file like so:
 
@@ -130,7 +130,7 @@ body:
     "id": "1",
     "attributes": {
       "email": "whatever@example.com",
-      "api_key": "jgn983hy48thw9begh98h4539h4"
+      "api_key": <user api key>
     }
   }
 }
@@ -158,13 +158,13 @@ body:
     "id": "1",
     "attributes": {
       "email": "whatever@example.com",
-      "api_key": "jgn983hy48thw9begh98h4539h4"
+      "api_key": <user api key>
     }
   }
 }
 ```
 ### Road Trip
-This endpoint helps logged in users plan a road trip by giving them a travel time estimate and weather at the time and location of their arrival.
+This endpoint helps logged in users plan a road trip by giving them a travel time estimate and weather at the time/location of their arrival.
 #### Request:
 ```
 POST /api/v1/road_trip
@@ -176,7 +176,7 @@ body:
 {
   "origin": "Denver,CO",
   "destination": "Pueblo,CO",
-  "api_key": "jgn983hy48thw9begh98h4539h4"
+  "api_key": <user api key>
 }
 ```
 
