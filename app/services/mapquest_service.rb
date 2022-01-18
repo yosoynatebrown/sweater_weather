@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MapquestService
   def self.coordinates(city)
     conn = get_url(url: 'http://www.mapquestapi.com')
@@ -12,8 +14,8 @@ class MapquestService
     response = conn.get("/directions/v2/route?key=#{ENV['mapquest_key']}&from=#{from}&to=#{to}")
     JSON.parse(response.body, symbolize_names: true)
   end
-  private
-    def self.get_url(url)
-      Faraday.new(url)
-    end
+
+  def self.get_url(url)
+    Faraday.new(url)
+  end
 end

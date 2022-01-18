@@ -1,7 +1,13 @@
-class Api::V1::BackgroundsController < ApplicationController
-  def index
-    background = UnsplashFacade.image(params[:location])
+# frozen_string_literal: true
 
-    render json: ImageSerializer.new(background)
+module Api
+  module V1
+    class BackgroundsController < ApplicationController
+      def index
+        background = UnsplashFacade.image(params[:location])
+
+        render json: ImageSerializer.new(background)
+      end
+    end
   end
 end

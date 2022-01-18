@@ -1,9 +1,15 @@
-class Api::V1::RoadTripController < ApplicationController
-  include ExceptionHandler
-  def create
-    User.find_by!(api_key: params[:api_key])
-    road_trip = RoadTripFacade.road_trip(params[:origin], params[:destination])
+# frozen_string_literal: true
 
-    render json: RoadTripSerializer.new(road_trip)
+module Api
+  module V1
+    class RoadTripController < ApplicationController
+      include ExceptionHandler
+      def create
+        User.find_by!(api_key: params[:api_key])
+        road_trip = RoadTripFacade.road_trip(params[:origin], params[:destination])
+
+        render json: RoadTripSerializer.new(road_trip)
+      end
+    end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Coordinate
   attr_reader :latitude,
               :longitude

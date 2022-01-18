@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadTrip
   attr_reader :id,
               :start_city,

@@ -1,8 +1,14 @@
-class Api::V1::ForecastController < ApplicationController
-  def index
-    coordinates = MapquestFacade.coordinates(params[:location])
-    forecast = WeatherFacade.forecast(coordinates)
+# frozen_string_literal: true
 
-    render json: ForecastSerializer.new(forecast)
+module Api
+  module V1
+    class ForecastController < ApplicationController
+      def index
+        coordinates = MapquestFacade.coordinates(params[:location])
+        forecast = WeatherFacade.forecast(coordinates)
+
+        render json: ForecastSerializer.new(forecast)
+      end
+    end
   end
 end

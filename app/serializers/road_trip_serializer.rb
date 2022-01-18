@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadTripSerializer
   include JSONAPI::Serializer
   attributes :start_city,
