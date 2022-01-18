@@ -36,7 +36,7 @@ unsplash_key: <API KEY>
 ### Retrieve weather for a city
 #### Request:
 ```
-GET /api/v1/forecast?location=denver,co
+GET /api/v1/forecast?location=Denver,CO
 Content-Type: application/json
 Accept: application/json
 ```
@@ -76,8 +76,8 @@ Accept: application/json
 
 #### Request:
 ```
-GET /api/v1/backgrounds?location=denver,co\
-Content-Type: application/json\
+GET /api/v1/backgrounds?location=Denver,CO
+Content-Type: application/json
 Accept: application/json
 ```
 
@@ -109,9 +109,9 @@ body:
 
 #### Request:
 ```
-POST /api/v1/users\
-Content-Type: application/json\
-Accept: application/json\
+POST /api/v1/users
+Content-Type: application/json
+Accept: application/json
 
 {
   "email": "whatever@example.com",
@@ -120,10 +120,10 @@ Accept: application/json\
 }
 ```
 #### Response:
-
-status: 201\
-body:
 ```
+status: 201
+body:
+
 {
   "data": {
     "type": "users",
@@ -139,9 +139,9 @@ body:
 
 #### Request:
 ```
-POST /api/v1/sessions\
-Content-Type: application/json\
-Accept: application/json\
+POST /api/v1/sessions
+Content-Type: application/json
+Accept: application/json
 
 {
   "email": "whatever@example.com",
@@ -150,7 +150,7 @@ Accept: application/json\
 ```
 #### Response:
 ```
-status: 200\
+status: 200
 body:
 {
   "data": {
@@ -167,9 +167,9 @@ body:
 This endpoint helps logged in users plan a road trip by giving them a travel time estimate and weather at the time and location of their arrival.
 #### Request:
 ```
-POST /api/v1/road_trip\
-Content-Type: application/json\
-Accept: application/json\
+POST /api/v1/road_trip
+Content-Type: application/json
+Accept: application/json
 
 body:
 
