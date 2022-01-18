@@ -1,11 +1,11 @@
 # README
-This project is a project for the Turing School involving the consumption of the OpenWeather, MapQuest, and Unsplash APIs. The learning goals include:
+This project is a Ruby on Rails Backend API for the Turing School involving the consumption of the OpenWeather, MapQuest, and Unsplash APIs. The learning goals include:
 
 * Expose an API that aggregates data from multiple external APIs
 * Expose an API that requires an authentication token
 * Expose an API for CRUD functionality
 * Determine completion criteria based on the needs of other developers
-* Research, select, and consume an API based on your needs as a developer
+* Research, select, and consume an API based on my needs as a developer
 
 
 For more context, see the project page [here.](https://backend.turing.edu/module3/projects/sweater_weather/)
