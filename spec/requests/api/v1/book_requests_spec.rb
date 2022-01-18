@@ -7,7 +7,7 @@ describe 'Book search API' do
     expect(response.status).to eq(200)
 
     books = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(books).to have_key(:data)
     expect(books[:data][:type]).to eq('books')
     expect(books[:data]).to have_key(:attributes)

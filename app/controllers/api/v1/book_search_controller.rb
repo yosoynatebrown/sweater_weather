@@ -9,7 +9,7 @@ class Api::V1::BookSearchController < ApplicationController
 
       render json: BooksSerializer.new(books)
     else
-      render json: { message: "Quantity cannot be less than 1" }, status: 400
+      render json: { message: 'Quantity cannot be less than 1' }, status: 400
     end
   end
 end

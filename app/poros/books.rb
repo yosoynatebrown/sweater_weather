@@ -4,7 +4,6 @@ class Books
               :forecast,
               :total_books_found,
               :books
-              
 
   def initialize(data, destination, forecast)
     @id = nil
@@ -27,7 +26,7 @@ class Books
   def forecast_attributes(forecast)
     {
       summary: forecast[:conditions],
-      temperature: forecast[:temperature].to_s + " F"
+      temperature: forecast[:temperature].to_s + ' F'
     }
   end
 end

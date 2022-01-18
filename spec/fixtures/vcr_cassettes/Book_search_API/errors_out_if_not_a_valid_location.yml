@@ -1,0 +1,399 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://openlibrary.org/search.json?limit=5&q=1112121
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Date:
+      - Tue, 18 Jan 2022 17:57:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Method:
+      - GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ol-Stats:
+      - '"SR 1 0.095 TT 0 0.097"'
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "numFound": 9,
+            "start": 0,
+            "numFoundExact": true,
+            "docs": [
+                {
+                    "key": "/works/OL5073348W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL5781686M",
+                        "/works/OL5073348W",
+                        "/authors/OL1112121A"
+                    ],
+                    "title": "Na i\u0361u\ufe21ge",
+                    "title_suggest": "Na i\u0361u\ufe21ge",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL5781686M"
+                    ],
+                    "publish_date": [
+                        "1958"
+                    ],
+                    "publish_year": [
+                        1958
+                    ],
+                    "first_publish_year": 1958,
+                    "number_of_pages_median": 630,
+                    "lccn": [
+                        "59031991"
+                    ],
+                    "publish_place": [
+                        "Moskva"
+                    ],
+                    "oclc": [
+                        "31821579"
+                    ],
+                    "lcc": [
+                        "PG-3476.00000000.Z327 N2"
+                    ],
+                    "last_modified_i": 1601246473,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "Sovetskii\u0306 pisatel\u02b9"
+                    ],
+                    "language": [
+                        "rus"
+                    ],
+                    "author_key": [
+                        "OL1112121A"
+                    ],
+                    "author_name": [
+                        "Fedor Zalata"
+                    ],
+                    "publisher_facet": [
+                        "Sovetskii\u0306 pisatel\u02b9"
+                    ],
+                    "_version_": 1715092964763500546,
+                    "lcc_sort": "PG-3476.00000000.Z327 N2",
+                    "author_facet": [
+                        "OL1112121A Fedor Zalata"
+                    ]
+                },
+                {
+                    "key": "/works/OL5073351W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL2906213M",
+                        "/works/OL5073351W",
+                        "/authors/OL1112121A"
+                    ],
+                    "title": "Uzly",
+                    "title_suggest": "Uzly",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL2906213M"
+                    ],
+                    "publish_date": [
+                        "1980"
+                    ],
+                    "publish_year": [
+                        1980
+                    ],
+                    "first_publish_year": 1980,
+                    "number_of_pages_median": 332,
+                    "lccn": [
+                        "84135759"
+                    ],
+                    "publish_place": [
+                        "Kiev"
+                    ],
+                    "last_modified_i": 1604118890,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "\"Rad. pis\u02b9mennik\""
+                    ],
+                    "language": [
+                        "rus"
+                    ],
+                    "author_key": [
+                        "OL1112121A"
+                    ],
+                    "author_name": [
+                        "Fedor Zalata"
+                    ],
+                    "publisher_facet": [
+                        "\"Rad. pis\u02b9mennik\""
+                    ],
+                    "_version_": 1715092965004673025,
+                    "author_facet": [
+                        "OL1112121A Fedor Zalata"
+                    ]
+                },
+                {
+                    "key": "/works/OL5073350W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL19898014M",
+                        "/works/OL5073350W",
+                        "/authors/OL1112121A"
+                    ],
+                    "title": "On zdelal vse, chto mog",
+                    "title_suggest": "On zdelal vse, chto mog",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL19898014M"
+                    ],
+                    "publish_date": [
+                        "1984"
+                    ],
+                    "publish_year": [
+                        1984
+                    ],
+                    "first_publish_year": 1984,
+                    "number_of_pages_median": 126,
+                    "publish_place": [
+                        "Dnepropetrovsk"
+                    ],
+                    "last_modified_i": 1260859447,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "Promin\u02b9"
+                    ],
+                    "language": [
+                        "rus"
+                    ],
+                    "author_key": [
+                        "OL1112121A"
+                    ],
+                    "author_name": [
+                        "Fedor Zalata"
+                    ],
+                    "publisher_facet": [
+                        "Promin\u02b9"
+                    ],
+                    "_version_": 1715092964729946115,
+                    "author_facet": [
+                        "OL1112121A Fedor Zalata"
+                    ]
+                },
+                {
+                    "key": "/works/OL5073349W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL2502405M",
+                        "/works/OL5073349W",
+                        "/authors/OL1112121A"
+                    ],
+                    "title": "On sdelal vse, chto mog",
+                    "title_suggest": "On sdelal vse, chto mog",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL2502405M"
+                    ],
+                    "publish_date": [
+                        "1984"
+                    ],
+                    "publish_year": [
+                        1984
+                    ],
+                    "first_publish_year": 1984,
+                    "number_of_pages_median": 126,
+                    "lccn": [
+                        "87870168"
+                    ],
+                    "publish_place": [
+                        "Dnepropetrovsk"
+                    ],
+                    "last_modified_i": 1604784985,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "\"Promin\u02b9\""
+                    ],
+                    "language": [
+                        "rus"
+                    ],
+                    "author_key": [
+                        "OL1112121A"
+                    ],
+                    "author_name": [
+                        "Fedor Zalata"
+                    ],
+                    "publisher_facet": [
+                        "\"Promin\u02b9\""
+                    ],
+                    "_version_": 1715092964904009730,
+                    "author_facet": [
+                        "OL1112121A Fedor Zalata"
+                    ]
+                },
+                {
+                    "key": "/works/OL1112121W",
+                    "type": "work",
+                    "seed": [
+                        "/books/OL16897776M",
+                        "/books/OL23333103M",
+                        "/works/OL1112121W",
+                        "/authors/OL114315A"
+                    ],
+                    "title": "Songs of Aphrodite and other poems",
+                    "title_suggest": "Songs of Aphrodite and other poems",
+                    "has_fulltext": true,
+                    "edition_count": 2,
+                    "edition_key": [
+                        "OL16897776M",
+                        "OL23333103M"
+                    ],
+                    "publish_date": [
+                        "1913"
+                    ],
+                    "publish_year": [
+                        1913
+                    ],
+                    "first_publish_year": 1913,
+                    "number_of_pages_median": 116,
+                    "publish_place": [
+                        "London"
+                    ],
+                    "last_modified_i": 1272439131,
+                    "ebook_count_i": 1,
+                    "ia": [
+                        "songsofaphrodite00sack"
+                    ],
+                    "public_scan_b": true,
+                    "ia_collection_s": "americana;cdl",
+                    "cover_edition_key": "OL23333103M",
+                    "cover_i": 6057278,
+                    "publisher": [
+                        "E. Mathews",
+                        "Elkin Mathews"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL114315A"
+                    ],
+                    "author_name": [
+                        "Sackville, Margaret Lady"
+                    ],
+                    "subject": [
+                        "Accessible book"
+                    ],
+                    "publisher_facet": [
+                        "E. Mathews",
+                        "Elkin Mathews"
+                    ],
+                    "subject_facet": [
+                        "Accessible book"
+                    ],
+                    "_version_": 1715074655437455361,
+                    "author_facet": [
+                        "OL114315A Sackville, Margaret Lady"
+                    ],
+                    "subject_key": [
+                        "accessible_book"
+                    ]
+                }
+            ],
+            "num_found": 9,
+            "q": "1112121",
+            "offset": null
+        }
+  recorded_at: Tue, 18 Jan 2022 17:57:35 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=<mapquest_key>&location=1112121
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 18 Jan 2022 17:57:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '7796'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Tue, 18 Jan 2022 17:57:35 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Set-Cookie:
+      - JSESSIONID=D60E7C1B81BD8B9BB6A0405DA8CDC0A8; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2022 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"1112121"},"locations":[{"street":"[348239
+        - 348275] 15 Sideroad","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Mono","adminArea5Type":"City","adminArea4":"Dufferin","adminArea4Type":"County","adminArea3":"ON","adminArea3Type":"State","adminArea1":"CA","adminArea1Type":"Country","postalCode":"L9W","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr61574|i38322970","unknownInput":"","type":"s","latLng":{"lat":44.025457,"lng":-80.008604},"displayLatLng":{"lat":44.025651,"lng":-80.008651},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=44.025457,-80.008604|marker-sm-50318A-1&scalebar=true&zoom=15&rand=2118976530"},{"street":"[226135
+        - 226175] 1331 Dr W","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Foothills
+        No. 31","adminArea5Type":"City","adminArea4":"Division No. 6","adminArea4Type":"County","adminArea3":"AB","adminArea3Type":"State","adminArea1":"CA","adminArea1Type":"Country","postalCode":"T0L","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr39673|i57080776","unknownInput":"","type":"s","latLng":{"lat":50.837839,"lng":-114.476764},"displayLatLng":{"lat":50.837764,"lng":-114.47695},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=50.837839,-114.476764|marker-sm-50318A-2&scalebar=true&zoom=15&rand=-2100645863"},{"street":"[45589
+        - 45599] 140th Ave","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Pelican
+        Rapids","adminArea5Type":"City","adminArea4":"Otter Tail","adminArea4Type":"County","adminArea3":"MN","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"56572-7214","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr47146|i28040656","unknownInput":"","type":"s","latLng":{"lat":46.623636,"lng":-96.198134},"displayLatLng":{"lat":46.623641,"lng":-96.198334},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=46.623636,-96.198134|marker-sm-50318A-3&scalebar=true&zoom=15&rand=-590328884"},{"street":"[39077
+        - 39299] 130th St","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Aberdeen","adminArea5Type":"City","adminArea4":"Brown","adminArea4Type":"County","adminArea3":"SD","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"57401-8101","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr38380|i53595026","unknownInput":"","type":"s","latLng":{"lat":45.502461,"lng":-98.402559},"displayLatLng":{"lat":45.502261,"lng":-98.402559},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=45.502461,-98.402559|marker-sm-50318A-4&scalebar=true&zoom=15&rand=1135458578"},{"street":"[38281
+        - 38299] 130th Ave","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Pleasant
+        Hill","adminArea5Type":"City","adminArea4":"Pike","adminArea4Type":"County","adminArea3":"IL","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"62366","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr37609|i10906540","unknownInput":"","type":"s","latLng":{"lat":39.443034,"lng":-90.815202},"displayLatLng":{"lat":39.442835,"lng":-90.815205},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=39.443034,-90.815202|marker-sm-50318A-5&scalebar=true&zoom=15&rand=-904571542"},{"street":"[33701
+        - 33799] 130th St","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Churdan","adminArea5Type":"City","adminArea4":"Carroll","adminArea4Type":"County","adminArea3":"IA","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"50050","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"R","linkId":"rnr38289|i19088857","unknownInput":"","type":"s","latLng":{"lat":42.166274,"lng":-94.639017},"displayLatLng":{"lat":42.166474,"lng":-94.639016},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=42.166274,-94.639017|marker-sm-50318A-6&scalebar=true&zoom=15&rand=-1306413497"},{"street":"[27101
+        - 28099] 132nd St","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Staples","adminArea5Type":"City","adminArea4":"Wadena","adminArea4Type":"County","adminArea3":"MN","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"56479-2021","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"R","linkId":"rnr39441|i29589587","unknownInput":"","type":"s","latLng":{"lat":46.416238,"lng":-94.789567},"displayLatLng":{"lat":46.416039,"lng":-94.78958},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=46.416238,-94.789567|marker-sm-50318A-7&scalebar=true&zoom=15&rand=1483714953"},{"street":"[25693
+        - 25899] 140th St","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Preston","adminArea5Type":"City","adminArea4":"Fillmore","adminArea4Type":"County","adminArea3":"MN","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"55965-1479","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr47917|i16581085","unknownInput":"","type":"s","latLng":{"lat":43.558588,"lng":-92.133491},"displayLatLng":{"lat":43.558788,"lng":-92.133491},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=43.558588,-92.133491|marker-sm-50318A-8&scalebar=true&zoom=15&rand=-1398632795"},{"street":"[23201
+        - 23399] 141st Ave","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Maple
+        Ridge","adminArea5Type":"City","adminArea4":"Greater Vancouver","adminArea4Type":"County","adminArea3":"BC","adminArea3Type":"State","adminArea1":"CA","adminArea1Type":"Country","postalCode":"V4R
+        2R4","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr48221|i66697002","unknownInput":"","type":"s","latLng":{"lat":49.258769,"lng":-122.577407},"displayLatLng":{"lat":49.258968,"lng":-122.577395},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=49.258769,-122.577407|marker-sm-50318A-9&scalebar=true&zoom=15&rand=-954167777"},{"street":"[21501
+        - 23333] 140th St","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Iowa
+        Falls","adminArea5Type":"City","adminArea4":"Hardin","adminArea4Type":"County","adminArea3":"IA","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"50126-8564","geocodeQualityCode":"B3CXX","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"L","linkId":"rnr47426|i9843714","unknownInput":"","type":"s","latLng":{"lat":42.507141,"lng":-93.254225},"displayLatLng":{"lat":42.507341,"lng":-93.254227},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=42.507141,-93.254225|marker-sm-50318A-10&scalebar=true&zoom=15&rand=1882598600"}]}]}'
+  recorded_at: Tue, 18 Jan 2022 17:57:35 GMT
+recorded_with: VCR 6.0.0

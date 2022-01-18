@@ -7,8 +7,7 @@ class LibraryService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-    private
-    def self.get_url(url)
-      Faraday.new(url)
-    end
+  def self.get_url(url)
+    Faraday.new(url)
+  end
 end
