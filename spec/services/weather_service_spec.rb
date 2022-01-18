@@ -59,7 +59,7 @@ RSpec.describe 'Weather search' do
 
     expect(first_day_data).to have_key :sunset
     expect(first_day_data[:sunset]).to be_a Integer
-    
+
     expect(first_day_data).to have_key :temp
     expect(first_day_data[:temp]).to be_a Hash
 
@@ -88,7 +88,7 @@ RSpec.describe 'Weather search' do
 
     expect(first_hour_data).to have_key :dt
     expect(first_hour_data[:dt]).to be_a Integer
-   
+
     expect(first_hour_data).to have_key :temp
     expect(first_hour_data[:temp]).to be_a Float
 

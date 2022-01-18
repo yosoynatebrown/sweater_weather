@@ -1,30 +1,30 @@
 require 'rails_helper'
 
 describe 'Sessions API' do
-  let(:headers) {
+  let(:headers) do
     {
-      "Content-Type" => "application/json",
-      "Accept"  => "application/json"
+      'Content-Type' => 'application/json',
+      'Accept' => 'application/json'
     }
-               }
+  end
   context 'when password is valid' do
     it 'will login a user' do
       user = create(:user)
       params = {
-      "email": user.email,
-      "password": "password123",
+        "email": user.email,
+        "password": 'password123'
       }
-      post "/api/v1/sessions", headers: headers, params: params.to_json
+      post '/api/v1/sessions', headers: headers, params: params.to_json
 
       expect(response.status).to eq(200)
-      
+
       login = JSON.parse(response.body, symbolize_names: true)
 
       expect(login).to have_key(:data)
       expect(login[:data]).to have_key(:id)
       expect(login[:data]).to have_key(:type)
       expect(login[:data]).to have_key(:attributes)
-      expect(login[:data][:type]).to eq("users")
+      expect(login[:data][:type]).to eq('users')
       expect(login[:data][:attributes]).to have_key(:email)
       expect(login[:data][:attributes][:email]).to be_a String
 
@@ -37,17 +37,17 @@ describe 'Sessions API' do
     it 'will return an error' do
       user = create(:user)
       params = {
-      "email": user.email,
-      "password": "wrong_password",
+        "email": user.email,
+        "password": 'wrong_password'
       }
-      post "/api/v1/sessions", headers: headers, params: params.to_json
+      post '/api/v1/sessions', headers: headers, params: params.to_json
 
       expect(response.status).to eq(401)
-      
+
       login = JSON.parse(response.body, symbolize_names: true)
 
-      expect(login[:message]).to eq("Invalid credentials")
-      expect(login[:errors][0]).to eq("Your login or API key is invalid. Cannot authenticate.")
+      expect(login[:message]).to eq('Invalid credentials')
+      expect(login[:errors][0]).to eq('Your login or API key is invalid. Cannot authenticate.')
     end
   end
 
@@ -55,17 +55,17 @@ describe 'Sessions API' do
     it 'will return the same error' do
       user = create(:user)
       params = {
-      "email": "wrong_email@madeup123.com",
-      "password": "password123",
+        "email": 'wrong_email@madeup123.com',
+        "password": 'password123'
       }
-      post "/api/v1/sessions", headers: headers, params: params.to_json
+      post '/api/v1/sessions', headers: headers, params: params.to_json
 
       expect(response.status).to eq(401)
-      
+
       login = JSON.parse(response.body, symbolize_names: true)
-      
-      expect(login[:message]).to eq("Invalid credentials")
-      expect(login[:errors][0]).to eq("Your login or API key is invalid. Cannot authenticate.")
+
+      expect(login[:message]).to eq('Invalid credentials')
+      expect(login[:errors][0]).to eq('Your login or API key is invalid. Cannot authenticate.')
     end
   end
 end

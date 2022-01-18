@@ -12,8 +12,8 @@ class Image
       location: search,
       image_url: data[:urls][:raw],
       credit: {
-        source: "https://unsplash.com/?utm_source=sweater_weather&utm_medium=referral",
-        author: "#{data[:user][:name]}",
+        source: 'https://unsplash.com/?utm_source=sweater_weather&utm_medium=referral',
+        author: data[:user][:name],
         author_url: "https://unsplash.com/@#{data[:user][:username]}?utm_source=sweater_weather&utm_medium=referral"
       }
     }

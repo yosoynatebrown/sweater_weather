@@ -6,7 +6,7 @@ class Api::V1::SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: UsersSerializer.new(user)
     else
-      raise ActiveRecord::RecordInvalid
+      raise ActiveRecord::RecordNotFound
     end
   end
 end
