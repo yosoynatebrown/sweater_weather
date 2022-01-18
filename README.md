@@ -8,6 +8,9 @@ This project is a project for the Turing School involving the consumption of the
 * Research, select, and consume an API based on your needs as a developer
 
 
+For more context, see the project page [here.](https://backend.turing.edu/module3/projects/sweater_weather/)
+
+
 To clone down this repo, run the following on your terminal:
 
 `git clone git@github.com:yosoynatebrown/sweater_weather.git`
