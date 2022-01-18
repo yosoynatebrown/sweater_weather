@@ -1,7 +1,11 @@
 class Api::V1::BookSearchController < ApplicationController
   def index
-    books = LibraryFacade.book_search(params[:location], params[:quantity])
+    if params[:quantity].to_i > 0
+      books = LibraryFacade.book_search(params[:location], params[:quantity])
 
-    render json: BooksSerializer.new(books)
+      render json: BooksSerializer.new(books)
+    else
+      render json: { message: "Quantity cannot be less than 1" }, status: 400
+    end
   end
 end
