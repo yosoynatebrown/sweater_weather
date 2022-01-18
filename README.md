@@ -12,16 +12,16 @@ To clone down this repo, run the following on your terminal:
 
 `git clone git@github.com:yosoynatebrown/sweater_weather.git`
 
-Then run:
-'rails db:{create,migrate}`
-`bundle install`
-and
-`bundle exec figaro install`
+Then run:\
+`rails db:{create,migrate}`\
+`bundle install`\
+and\
+`bundle exec figaro install`\
 to create an application.yml file in your config directory (where you will you store the necessary API keys).
 
-Register for a MapQuest API key [here.](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)
-Register for a Unsplash API key [here.](https://unsplash.com/developers)
-Register for a OpenWeather API key [here.](https://home.openweathermap.org/users/sign_up)
+Register for a MapQuest API key [here.](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)\
+Register for a Unsplash API key [here.](https://unsplash.com/developers)\
+Register for a OpenWeather API key [here.](https://home.openweathermap.org/users/sign_up)\
 
 Place those keys in your application.yml file like so:
 
@@ -29,4 +29,172 @@ Place those keys in your application.yml file like so:
 mapquest_key: <API KEY>
 open_weather_key: <API KEY>
 unsplash_key: <API KEY>
+```
+
+## Endpoints
+
+### Retrieve weather for a city
+#### Request:
+```
+GET /api/v1/forecast?location=denver,co
+Content-Type: application/json
+Accept: application/json
+```
+#### Response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "forecast",
+    "attributes": {
+      "current_weather": {
+        "datetime": "2020-09-30 13:27:03 -0600",
+        "temperature": 79.4,
+        etc
+      },
+      "daily_weather": [
+        {
+          "date": "2020-10-01",
+          "sunrise": "2020-10-01 06:10:43 -0600",
+          etc
+        },
+        {...} etc
+      ],
+      "hourly_weather": [
+        {
+          "time": "14:00:00",
+          "conditions": "cloudy with a chance of meatballs",
+          etc
+        },
+        {...} etc
+      ]
+    }
+  }
+}
+```
+### Background Image for the City
+
+#### Request:
+```
+GET /api/v1/backgrounds?location=denver,co\
+Content-Type: application/json\
+Accept: application/json
+```
+
+#### Response:
+
+This will return the url of an appropriate background image for a location:
+```
+status: 200
+body:
+{
+  "data": {
+    "type": "image",
+    "id": null,
+    "attributes": {
+      "image": {
+        "location": "denver,co",
+        "image_url": "https://pixabay.com/get/54e6d4444f50a814f1dc8460962930761c38d6ed534c704c7c2878dd954dc451_640.jpg",
+        "credit": {
+          "source": "pixabay.com",
+          "author": "quinntheislander",
+          "logo": "https://pixabay.com/static/img/logo_square.png"
+        }
+      }
+    }
+  }
+}
+```
+### User Registration
+
+#### Request:
+```
+POST /api/v1/users\
+Content-Type: application/json\
+Accept: application/json\
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+#### Response:
+
+status: 201\
+body:
+```
+{
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
+}
+```
+### Login:
+
+#### Request:
+```
+POST /api/v1/sessions\
+Content-Type: application/json\
+Accept: application/json\
+
+{
+  "email": "whatever@example.com",
+  "password": "password"
+}
+```
+#### Response:
+```
+status: 200\
+body:
+{
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
+}
+```
+### Road Trip
+
+#### Request:
+```
+POST /api/v1/road_trip\
+Content-Type: application/json\
+Accept: application/json\
+
+body:
+
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
+#### Response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "roadtrip",
+    "attributes": {
+      "start_city": "Denver, CO",
+      "end_city": "Estes Park, CO",
+      "travel_time": "2 hours, 13 minutes"
+      "weather_at_eta": {
+        "temperature": 59.4,
+        "conditions": "partly cloudy with a chance of meatballs"
+      }
+    }
+  }
+}
 ```
