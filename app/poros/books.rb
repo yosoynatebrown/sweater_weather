@@ -27,7 +27,7 @@ class Books
   def forecast_attributes(forecast)
     {
       summary: forecast[:conditions],
-      temperature: forecast[:temperature].to_s + "F"
+      temperature: forecast[:temperature].to_s + " F"
     }
   end
 end
