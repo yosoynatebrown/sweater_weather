@@ -6,7 +6,11 @@ module Api
       include ExceptionHandler
       def create
         User.find_by!(api_key: params[:api_key])
-        road_trip = RoadTripFacade.road_trip(params[:origin], params[:destination])
+        if params[:units]
+          road_trip = RoadTripFacade.road_trip(params[:origin], params[:destination], params[:units])
+        else
+          road_trip = RoadTripFacade.road_trip(params[:origin], params[:destination])
+        end
 
         render json: RoadTripSerializer.new(road_trip)
       end

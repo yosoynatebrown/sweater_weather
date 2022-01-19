@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'Forecasts API' do
-  it 'sends a forecast', :vcr do
+  it 'returns a forecast', :vcr do
     get '/api/v1/forecast?location=denver,co'
 
     expect(response.status).to eq(200)
@@ -101,5 +101,24 @@ describe 'Forecasts API' do
       expect(day).not_to have_key(:wind_gust)
       expect(day).not_to have_key(:dew_point)
     end
+  end
+
+  it 'allows for metric units', :vcr do
+    get '/api/v1/forecast?location=denver,co&units=metric'
+
+    expect(response.status).to eq(200)
+
+    metric_forecast = JSON.parse(response.body, symbolize_names: true)
+    celsius = metric_forecast[:data][:attributes][:current_weather][:temperature]
+
+    get '/api/v1/forecast?location=denver,co&units=imperial'
+
+    expect(response.status).to eq(200)
+
+    imperial_forecast = JSON.parse(response.body, symbolize_names: true)
+
+    fahrenheit = imperial_forecast[:data][:attributes][:current_weather][:temperature]
+    
+    expect(fahrenheit).to be > celsius
   end
 end
