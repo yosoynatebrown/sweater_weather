@@ -4,14 +4,14 @@ class Image
   attr_reader :id,
               :image
 
-  def initialize(search, data)
+  def initialize(location, data)
     @id    = nil
-    @image = image_hash(search, data)
+    @image = image_hash(location, data)
   end
 
-  def image_hash(search, data)
+  def image_hash(location, data)
     {
-      location: search,
+      location: location,
       image_url: data[:urls][:raw],
       credit: {
         source: 'https://unsplash.com/?utm_source=sweater_weather&utm_medium=referral',

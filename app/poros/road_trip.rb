@@ -27,7 +27,7 @@ class RoadTrip
   end
 
   def find_weather
-    coordinates = MapquestFacade.coordinates(@end_city)
+    coordinates = MapquestFacade.coordinates(end_city)
     forecast = WeatherFacade.forecast(coordinates)
 
     travel_time_in_seconds = to_seconds(travel_time)
