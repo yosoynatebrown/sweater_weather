@@ -17,29 +17,27 @@ class UnsplashFacade
 
     case hour
     when 0..4
-      "middle of the night"
+      'middle of the night'
     when 5..10
-      "morning"
+      'morning'
     when 11..12
-      "noon"
+      'noon'
     when 13..16
-      "afternoon"
+      'afternoon'
     when 17..20
-      "evening"
+      'evening'
     when 21..23
-      "night"
+      'night'
     end
   end
-
 private
-
-   def self.hour_of(time)
+  def self.hour_of(time)
     time.strftime('%H').to_i
-   end
+  end
 
-   def self.get_weather(location)
+  def self.get_weather(location)
     coordinates = MapquestFacade.coordinates(location)
     forecast = WeatherFacade.forecast(coordinates)
     forecast.current_weather[:conditions]
-   end
+  end
 end
