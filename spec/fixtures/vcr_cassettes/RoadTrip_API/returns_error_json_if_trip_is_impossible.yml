@@ -179,7 +179,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Wed, 19 Jan 2022 12:11:24 GMT
+      - Wed, 19 Jan 2022 12:28:40 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -187,11 +187,11 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - JSESSIONID=6E91EACECA20FC23E5F478B2BD2B0D23; Path=/directions; HttpOnly
+      - JSESSIONID=21F7D0560CDBB71F4D50393C4468277C; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 19 Jan 2022 12:11:24 GMT
+      - Wed, 19 Jan 2022 12:28:40 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -208,5 +208,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Wed, 19 Jan 2022 12:11:24 GMT
+  recorded_at: Wed, 19 Jan 2022 12:28:40 GMT
 recorded_with: VCR 6.0.0
