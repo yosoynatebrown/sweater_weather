@@ -122,4 +122,35 @@ describe 'RoadTrip API' do
     expect(road_trip[:data][:attributes][:travel_time]).to eq('impossible')
     expect(road_trip[:data][:attributes][:weather_at_eta]).to be_empty
   end
+
+  it 'accepts metric param for temperature', :vcr do
+     params = {
+      "origin": 'Denver,CO',
+      "destination": 'Pueblo,CO',
+      "api_key": 'ysbzsAXn8vcmift9Thn9mSFE',
+      "units": 'metric'
+    }
+    post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+    expect(response.status).to eq(200)
+
+    metric_road_trip = JSON.parse(response.body, symbolize_names: true)
+    
+
+    params = {
+      "origin": 'Denver,CO',
+      "destination": 'Pueblo,CO',
+      "api_key": 'ysbzsAXn8vcmift9Thn9mSFE',
+      "units": 'imperial'
+    }
+    post '/api/v1/road_trip', headers: headers, params: params.to_json
+
+    expect(response.status).to eq(200)
+
+    imperial_road_trip = JSON.parse(response.body, symbolize_names: true)
+    celsius = metric_road_trip[:data][:attributes][:weather_at_eta][:temperature]
+    fahrenheit = imperial_road_trip[:data][:attributes][:weather_at_eta][:temperature]
+
+    expect(celsius).to be < fahrenheit
+  end
 end

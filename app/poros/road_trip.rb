@@ -7,11 +7,12 @@ class RoadTrip
               :travel_time,
               :weather_at_eta
 
-  def initialize(start_city, end_city, travel_time)
+  def initialize(start_city, end_city, travel_time, units='imperial')
     @id             = nil
     @start_city     = start_city
     @end_city       = end_city
     @travel_time    = travel_time
+    @units          = units
     @weather_at_eta = weather_data
   end
 
@@ -28,8 +29,7 @@ class RoadTrip
 
   def find_weather
     coordinates = MapquestFacade.coordinates(end_city)
-    forecast = WeatherFacade.forecast(coordinates)
-
+    forecast = WeatherFacade.forecast(coordinates, @units)
     travel_time_in_seconds = to_seconds(travel_time)
 
     weather = if travel_time_in_seconds < 8.hours

@@ -5,8 +5,11 @@ module Api
     class ForecastController < ApplicationController
       def index
         coordinates = MapquestFacade.coordinates(params[:location])
-        forecast = WeatherFacade.forecast(coordinates)
-
+        if params[:units]
+          forecast = WeatherFacade.forecast(coordinates, params[:units])
+        else
+          forecast = WeatherFacade.forecast(coordinates)
+        end
         render json: ForecastSerializer.new(forecast)
       end
     end
